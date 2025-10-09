@@ -33,21 +33,18 @@ public class DriverControlled extends LinearOpMode
 
         waitForStart();
         while (opModeIsActive())
-
         {
-double leftStickX = gamepad1.left_stick_x;
-        double leftStickY = gamepad1.left_stick_y;
-                double rightStickX = -gamepad1.right_stick_x;
-                double buddy = Math.max(Math.abs(leftStickX) + Math.abs(leftStickY) + Math.abs(rightStickX), 1);
-                frontLeft.setDirection(DcMotor.Direction.REVERSE);
-                backLeft.setDirection(DcMotor.Direction.REVERSE);
+            double leftStickX = gamepad1.left_stick_x;
+            double leftStickY = -gamepad1.left_stick_y;
+            double rightStickX = gamepad1.right_stick_x;
+            double buddy = Math.max(Math.abs(leftStickX) + Math.abs(leftStickY) + Math.abs(rightStickX), 1);
+            frontLeft.setDirection(DcMotor.Direction.REVERSE);
+            backLeft.setDirection(DcMotor.Direction.REVERSE);
 
-frontLeft.setPower((leftStickY + leftStickX + rightStickX)/buddy);
-frontRight.setPower((leftStickY - leftStickX - rightStickX)/buddy);
-backLeft.setPower((leftStickY - leftStickX + rightStickX)/buddy);
-backRight.setPower((leftStickY + leftStickX - rightStickX)/buddy);
-
-
+            frontLeft.setPower((leftStickY + leftStickX + rightStickX)/buddy);
+            frontRight.setPower((leftStickY - leftStickX - rightStickX)/buddy);
+            backLeft.setPower((leftStickY - leftStickX + rightStickX)/buddy);
+            backRight.setPower((leftStickY + leftStickX - rightStickX)/buddy);
         }
     }
 }
