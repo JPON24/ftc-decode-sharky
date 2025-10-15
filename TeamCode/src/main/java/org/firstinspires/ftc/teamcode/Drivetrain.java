@@ -5,6 +5,13 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 public class Drivetrain{
+    /*
+
+
+    JACOB'S CODE - MEANT AS A REFERENCE, NOT AS WORKING DIRECTORY CODE
+
+
+     */
     private double speedScalar = 1; // used to control speed with bumpers
     
     //motor references
@@ -89,7 +96,7 @@ public class Drivetrain{
         }
         
         //get the sin and cos of theta
-        //math.pi/4 represents 45 degrees, accounting for angular offset of mechanum
+        //math.pi/4 represents 45 degrees, accounting for angular offset of mecanum
         double sin = Math.sin((theta * (Math.PI/180)) - (Math.PI/4));
         double cos = Math.cos((theta * (Math.PI/180)) - (Math.PI/4));
         //max of sin and cos, used to normalize the values for maximum efficiency
